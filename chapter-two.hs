@@ -105,6 +105,9 @@ doubleRangeOnPredicate lB uB d r = [x | x <- [lB..uB], x `mod` d == r]
 -- objects = ["apple(s)","orange(s)","banana(s)"]  
 -- [n ++ " " ++ o | n <- numbers, o <- objects]
 -- execrise: create [1..4] then coerce to string in list comprehension
+numbersAndItems :: Show a => [a] -> [[Char]] -> [[Char]]
+numbersAndItems nums items = 
+  [show n ++ " " ++ i | n <- nums, i <- items]
 
 -- basically `length`
 -- `_` is an important keyword 
@@ -116,16 +119,12 @@ removeNonUppercase :: [Char] -> [Char]
 removeNonUppercase st = [ c | c <- st, c `elem` ['A'..'Z']]   
 
 -- remove odds from each list
--- let xxs = 
--- [
--- [1,3,5,2,3,1,2,4,5],
--- [1,2,3,4,5,6,7,8,9],
--- [1,2,4,2,1,6,3,1,3,2,3,6]
--- ]  
--- [ [ x | x <- xs, even x ] | xs <- xxs] 
+-- let xxs = [ [1,3,5,2,3,1,2,4,5],[1,2,3,4,5,6,7,8,9], [1,2,4,2,1,6,3,1,3,2,3,6]]  
+filterListofLists :: Integral a => [[a]] -> [[a]]
+filterListofLists xxs = [ [ x | x <- xs, even x ] | xs <- xxs] 
 
 -- segments a string on a delimiter d
--- delim st d = 
+-- delim st d word_index = 
 
 
 -- list of tuples must have similar size tuples
