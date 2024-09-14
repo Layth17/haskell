@@ -109,6 +109,10 @@ numbersAndItems :: Show a => [a] -> [[Char]] -> [[Char]]
 numbersAndItems nums items = 
   [show n ++ " " ++ i | n <- nums, i <- items]
 
+numbersAndItems2 :: Show a => [a] -> [[Char]] -> [[Char]]
+numbersAndItems2 nums items = 
+  [(head (show n):" ") ++ i | n <- nums, i <- items]
+
 -- basically `length`
 -- `_` is an important keyword 
 -- (it means we are not using it)
